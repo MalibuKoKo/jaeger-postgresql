@@ -24,3 +24,7 @@ COPY --from=BUILD /build/jaeger-pg-store /go/bin/jaeger-pg-store
 RUN mkdir /plugin
 # /plugin/ location is defined in jaeger-operator
 CMD ["cp", "-r", "/go/bin/jaeger-pg-store", "/plugin/jaeger-pg-store"]
+
+LABEL org.opencontainers.image.source=https://github.com/MalibuKoKo/jaeger-postgresql
+LABEL org.opencontainers.image.description="jaeger-postgresql"
+LABEL org.opencontainers.image.licenses=MIT
